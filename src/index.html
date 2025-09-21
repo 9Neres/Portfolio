@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ric. Portfolio</title>
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #fab570;
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --bg-card-hover: #1f1f1f;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --text-muted: #999999;
+            --border-color: #2a2a2a;
+            --glass-bg: rgba(26, 26, 26, 0.7);
+            --glass-border: rgba(250, 181, 112, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 9%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .navbar {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--primary-color);
+            background: rgba(250, 181, 112, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .navbar a:hover::after {
+            width: 80%;
+        }
+
+        #menu-icon {
+            font-size: 2rem;
+            color: var(--text-primary);
+            display: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #menu-icon:hover {
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        /* Spinner */
+        .spinner {
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .spinner span {
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1.2s ease-in-out infinite;
+        }
+
+        .spinner span:nth-child(2) { animation-delay: 0.1s; }
+        .spinner span:nth-child(3) { animation-delay: 0.2s; }
+        .spinner span:nth-child(4) { animation-delay: 0.3s; }
+        .spinner span:nth-child(5) { animation-delay: 0.4s; }
+        .spinner span:nth-child(6) { animation-delay: 0.5s; }
+        .spinner span:nth-child(7) { animation-delay: 0.6s; }
+        .spinner span:nth-child(8) { animation-delay: 0.7s; }
+
+        @keyframes spin {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        /* Home Section */
+        .home {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding: 0 9%;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a1a 50%, var(--bg-dark) 100%);
+        }
+
+        .home-content {
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        .home-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: slideInLeft 1s ease 0.3s forwards;
+        }
+
+        .home-content h1 span {
+            color: var(--primary-color);
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .home-content h1 span:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 20px rgba(250, 181, 112, 0.5);
+        }
+
+        .text-animation {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: slideInLeft 1s ease 0.6s forwards;
+        }
+
+        .home-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            opacity: 0;
+            animation: slideInLeft 1s ease 0.9s forwards;
+        }
+
+        .social-icon {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: slideInLeft 1s ease 1.2s forwards;
+        }
+
+        .social-icon a {
+            width: 50px;
+            height: 50px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon a:hover {
+            transform: translateY(-5px) scale(1.05);
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            background: rgba(250, 181, 112, 0.1);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: slideInLeft 1s ease 1.5s forwards;
+        }
+
+        .button:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: var(--primary-color);
+            color: var(--bg-dark);
+            box-shadow: 0 10px 25px rgba(250, 181, 112, 0.3);
+        }
+
+        .button__icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Loader */
+        .loader {
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0;
+            animation: slideInRight 1s ease 1.8s forwards;
+        }
+
+        .box1, .box2, .box3 {
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 4px;
+            animation: bounce 1.4s ease-in-out infinite;
+        }
+
+        .box2 { animation-delay: 0.2s; }
+        .box3 { animation-delay: 0.4s; }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 9% 50px;
+            background: var(--bg-dark);
+            min-height: 100vh;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .heading i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .heading:hover i {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .heading:hover {
+            color: var(--primary-color);
+        }
+
+        /* Glass Card */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(250, 181, 112, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .glass-card:hover::before {
+            left: 100%;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--primary-color);
+            background: rgba(26, 26, 26, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem 5%;
+            }
+            
+            .navbar {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 2rem 5%;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(10px);
+                border-top: 1px solid var(--border-color);
+                flex-direction: column;
+                transition: top 0.3s ease;
+            }
+
+            .navbar.active {
+                top: 100%;
+            }
+
+            #menu-icon {
+                display: block;
+            }
+
+            .home {
+                flex-direction: column;
+                padding: 0 5%;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .home-content h1 {
+                font-size: 3rem;
+            }
+
+            .text-animation {
+                font-size: 1.5rem;
+            }
+
+            .section {
+                padding: 80px 5% 40px;
+            }
+
+            .heading {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .home-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .text-animation {
+                font-size: 1.2rem;
+            }
+
+            .heading {
+                font-size: 1.8rem;
+            }
+
+            .social-icon a {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="spinner">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <a href="#home" class="logo"></a>
+        
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Início</a>
+            <a href="#education">Educação</a>
+            <a href="#skills">Skills</a>
+            <a href="#experiencias">Experiências</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#certificados">Certificados</a>
+            <a href="#Contact">Contato</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Olá, me chamo <span>Ricardo</span></h1>
+            <h3 class="text-animation">
+                <i class='bx bx-code-alt'></i>
+                <span>Desenvolvedor Back-end</span>
+            </h3>
+            <p>Estudante de Sistemas de Informação no Centro Universitário Sul-Americano, apaixonado por tecnologia e programação. Sempre em busca de evoluir como programador e criar soluções inovadoras.</p>
+
+            <div class="social-icon">
+                <a href="https://github.com/9Neres" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="www.linkedin.com/in/9neres" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="https://www.instagram.com/9.neres/" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://x.com/9Picon" target="_blank"><i class='bx bxl-twitter'></i></a>
+            </div>
+
+            <a href="assets/pdf/Ricardo Neres CV.pdf" class="button" download>
+                <span class="button__text">Baixar CV</span>
+                <span class="button__icon">
+                    <svg class="svg" data-name="Layer 2" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path>
+                        <path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path>
+                        <path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path>
+                    </svg>
+                </span>
+            </a>            
+        </div>
+        
+        <div class="loader">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+    </section>
+    
+    <div data-include="partials/education.html"></div>
+    <div data-include="partials/skills.html"></div>
+    <div data-include="partials/experiencias.html"></div>
+    <div data-include="partials/projetos.html"></div>
+    <div data-include="partials/certificate.html"></div>
+    <div data-include="partials/contact.html"></div>
+    
+
+    <script>
+        // Função para incluir partials HTML
+        async function includeHTML() {
+            const elements = document.querySelectorAll('[data-include]');
+            
+            for (let element of elements) {
+                const file = element.getAttribute('data-include');
+                
+                try {
+                    const response = await fetch(file);
+                    if (response.ok) {
+                        const html = await response.text();
+                        element.innerHTML = html;
+                    } else {
+                        console.error(`Erro ao carregar ${file}: ${response.status}`);
+                    }
+                } catch (error) {
+                    console.error(`Erro ao buscar ${file}:`, error);
+                }
+            }
+        }
+
+        // Menu mobile
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.querySelector('.navbar');
+
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active menu highlight
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.navbar a[href="#${sectionId}"]`);
+
+                if (navLink) {
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        document.querySelectorAll('.navbar a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        navLink.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // Chama a função quando o DOM estiver carregado
+        document.addEventListener('DOMContentLoaded', includeHTML);
+    </script>
+</body>
+</html>

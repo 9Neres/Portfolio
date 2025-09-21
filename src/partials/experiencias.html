@@ -1,0 +1,155 @@
+<!-- ...existing code... -->
+<section class="experiences" id="experiencias">
+    <h2 class="heading">
+        <i class='bx bx-briefcase'></i>
+        Experiências
+    </h2>
+
+    <div class="experiences-container">
+        <article class="experience-card glass-card">
+            <div class="experience-meta">
+                <span class="exp-period">2025 - Presente</span>
+            </div>
+            <div class="experience-content">
+                <div class="experience-head">
+                    <h3 class="exp-role">Estagiário TI</h3>
+                    <span class="exp-company">Máxima Tech</span>
+                </div>
+                <p class="exp-desc">
+                    Realização de consultas SQL no Toad for Oracle para inserção, atualização e edição de informações no banco de dados.
+
+Utilização do Jira para gestão de demandas e acompanhamento de backlogs.
+
+Desenvolvimento de servidor Discord.
+
+Alinhamento direto de prioridades com o Customer Success Manager (CSM) em relação às empresas e aos Representantes Comerciais Autorizados (RCA) do Winthor.
+
+Uso do Asana para documentação e organização das atividades da equipe.
+
+Operação do Jenkins para manutenção de ambientes em nuvem.
+                </p>
+                <div class="exp-tags">
+                    <span class="tag">Jira</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Toad Oracle</span>
+                    <span class="tag">Scrum</span>
+                    <span class="tag">SLA</span>
+                    <span class="tag">Jenkins</span>
+                    <span class="tag">Asana</span>
+                    <span class="tag">Microsoft Excel</span>
+                    <span class="tag">Microsoft Word</span>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<style>
+:root {
+    --primary-color: #fab570;
+    --bg-dark: #0a0a0a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --glass-bg: rgba(26,26,26,0.7);
+    --glass-border: rgba(250,181,112,0.1);
+}
+
+.experiences {
+    padding: 100px 9% 50px;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: auto; /* removido 100vh para crescer dinamicamente */
+}
+
+.experiences .heading {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    color: var(--text-primary);
+}
+
+.experiences-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: stretch;
+}
+
+.experience-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.2rem;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    align-self: stretch; /* garante que o card ocupe toda a largura do container */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.experience-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(250,181,112,0.18);
+    background: rgba(26,26,26,0.85);
+}
+
+.experience-meta {
+    flex: 0 0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.exp-period {
+    background: rgba(250,181,112,0.08);
+    color: var(--primary-color);
+    padding: .5rem .7rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: .9rem;
+    border: 1px solid rgba(250,181,112,0.06);
+}
+
+.experience-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.experience-head {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: .8rem;
+    flex-wrap:wrap;
+}
+
+.exp-role { font-size: 1.05rem; color: var(--text-primary); }
+.exp-company { color: var(--text-secondary); font-size: .95rem; }
+.exp-desc { color: rgba(255,255,255,0.8); font-size: .95rem; line-height: 1.5; }
+.exp-tags { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.4rem; }
+.tag { background: rgba(250,181,112,0.06); color: var(--primary-color); padding: .25rem .6rem; border-radius: 12px; font-size: .85rem; border: 1px solid rgba(250,181,112,0.08); }
+
+/* Responsive: mantém empilhamento e ajustes em telas menores */
+@media (max-width: 900px) {
+    .experiences { padding: 80px 5% 40px; }
+    .experience-card { flex-direction: column; align-items:flex-start; }
+    .experience-meta { flex: 0 0 auto; align-self:flex-start; }
+}
+
+@media (max-width: 480px) {
+    .experiences .heading { font-size: 1.6rem; gap:.5rem; }
+    .exp-period { font-size: .85rem; padding: .4rem .6rem; }
+    .exp-desc { font-size: .92rem; }
+}
+</style>
+<!-- ...existing code... -->
