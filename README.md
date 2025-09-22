@@ -1,7 +1,7 @@
 <div align="center">
   <h1> Meu Portfolio</h1>
   
-  <img src="![alt text](image.png)" alt="" width="400">
+  <img src="image.png" alt="" width="400">
   
   <br><br>
   
