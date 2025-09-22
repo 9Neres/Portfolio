@@ -4,8 +4,7 @@
   <img src="image.png" alt="" width="400">
   
   <br><br>
-  
-  <p><em>Site estático em HTML/CSS/JS usando partials (HTML fragments) carregados via `data-include` + `fetch`. Usa Boxicons e Google Fonts; layout responsivo com CSS puro.</em></p>
+ 
 </div>
 
 ---
