@@ -68,43 +68,6 @@
             transform: scale(1.05);
         }
 
-        .navbar {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .navbar a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-        }
-
-        .navbar a:hover,
-        .navbar a.active {
-            color: var(--primary-color);
-            background: rgba(250, 181, 112, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .navbar a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        .navbar a:hover::after {
-            width: 80%;
-        }
 
         #menu-icon {
             font-size: 2rem;
