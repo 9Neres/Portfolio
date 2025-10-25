@@ -1,0 +1,325 @@
+<section class="contact" id="Contact">
+    <h2 class="heading">
+        <i class='bx bx-mail-send'></i>
+        Contato
+    </h2>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="contact-item glass-card">
+                <div class="contact-icon">
+                    <i class='bx bx-envelope'></i>
+                </div>
+                <div class="contact-content">
+                    <h3>Email</h3>
+                    <p>ricardoborgescontact@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="contact-item glass-card">
+                <div class="contact-icon">
+                    <i class='bx bx-phone'></i>
+                </div>
+                <div class="contact-content">
+                    <h3>Telefone</h3>
+                    <p>+55 (62) 9 9197-0494</p>
+                </div>
+            </div>
+
+            <div class="contact-item glass-card">
+                <div class="contact-icon">
+                    <i class='bx bx-map'></i>
+                </div>
+                <div class="contact-content">
+                    <h3>Localização</h3>
+                    <p>Goiânia, Goiás - Brasil</p>
+                </div>
+            </div>
+
+        </div>
+
+        
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>&copy; 2025 Ricardo Neres. Todos os direitos reservados.</p>
+                <p>Feito com <i class='bx bx-heart'></i> e muito <i class='bx bx-coffee'></i></p>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://github.com/9Neres" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/9neres/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="https://www.instagram.com/9.neres/" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://x.com/9Picon" target="_blank"><i class='bx bxl-twitter'></i></a>
+            </div>
+        </div>
+
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39C433.37,30.84,370.35,44.22,
+                310.88,67.95C256.21,89.08,203.93,118.2,154.21,148.33C109.83,175.45,71.55,204.68,38.34,235.78,14.5,258.57,
+                0,283.09,0,306.34V430H1200V304.22C1200,279.52,1172.41,251.21,1128.27,223.11,1067.5,186.24,990.9,151.34,985.66,92.83Z"/>
+            </svg>
+        </div>
+    </footer>
+</section>
+
+<style>
+:root {
+    --primary-color: #fab570;
+    --bg-dark: #0a0a0a;
+    --bg-card: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #999999;
+    --glass-bg: rgba(26, 26, 26, 0.7);
+    --glass-border: rgba(250, 181, 112, 0.1);
+}
+
+/* Section base */
+.contact {
+    padding: 100px 9% 40px;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: auto;
+    position: relative;
+}
+
+.contact .heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact .heading:hover {
+    color: var(--primary-color);
+}
+
+.contact .heading i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+/* Layout */
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+/* transforma os contatos em blocos responsivos */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    width: 100%;
+    margin: 0;
+    justify-items: stretch;
+    align-items: start;
+}
+
+/* estilo dos cartões (email, telefone, localização, redes) */
+.contact-item, .contact-social {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.2rem;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    transition: transform .18s ease, box-shadow .18s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-item:hover, .contact-social:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.45);
+}
+
+/* ícone fixo à esquerda do card */
+.contact-item .contact-icon {
+    margin-right: 0;
+    flex-shrink: 0;
+}
+
+/* conteúdo do cartão ocupa o restante do espaço */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* ajustes visuais menores */
+.contact-content h3 { margin: 0; font-size: 1rem; }
+.contact-content p { margin: 0; color: var(--text-muted); }
+
+/* Social links */
+.contact-social .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-top: .6rem;
+}
+
+
+/* Form column */
+.contact-form-container {
+    width: 100%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.6rem;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+}
+
+/* Form rows */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Inputs */
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.35rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.04);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    outline: none;
+    transition: box-shadow .18s ease, border-color .18s ease, transform .12s ease;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    box-shadow: 0 6px 18px rgba(250,181,112,0.06);
+    border-color: rgba(250,181,112,0.25);
+    transform: translateY(-2px);
+}
+
+/* Submit button */
+.submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    justify-content: center;
+    width: max-content;
+    padding: .7rem 1.1rem;
+    background: linear-gradient(90deg, var(--primary-color), #e89548);
+    color: #0a0a0a;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease;
+    align-self: flex-end;
+}
+
+.submit-btn i { font-size: 1.05rem; }
+
+.submit-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(234,150,70,0.12);
+}
+
+/* Feedback */
+.form-feedback {
+    margin-top: .6rem;
+    color: var(--text-secondary);
+    font-size: .9rem;
+}
+
+/* Footer */
+.footer {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    color: var(--text-secondary);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.footer-text p {
+    margin: 0;
+    font-size: .95rem;
+    color: var(--text-secondary);
+}
+
+.footer-social a {
+    color: var(--text-secondary);
+    margin-left: .6rem;
+    font-size: 1.2rem;
+    transition: color .18s ease, transform .18s ease;
+}
+
+.footer-social a:hover {
+    color: var(--primary-color);
+    transform: translateY(-4px);
+}
+
+/* Footer wave */
+.footer-wave svg {
+    display: block;
+    width: 100%;
+    height: 80px;
+    margin-top: 1rem;
+    fill: rgba(255,255,255,0.03);
+}
+
+/* Glass card helper (if not defined global) */
+.glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .contact-container { padding: 0 1rem; }
+    .contact-info { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .contact { padding: 80px 4% 30px; }
+    .contact .heading { font-size: 1.8rem; gap: .6rem; }
+    .contact-icon { width: 48px; height: 48px; font-size: 1.3rem; }
+    .contact-item { padding: .8rem; border-radius: 10px; }
+    .contact-form { padding: 1rem; }
+}
+</style>

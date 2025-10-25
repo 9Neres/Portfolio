@@ -1,0 +1,171 @@
+<section class="skills" id="skills">
+    <h2 class="heading">
+        <i class='bx bx-code-curly'></i>
+        Skills
+    </h2>
+
+    <div class="skills-container">
+        <div class="skills-category glass-card">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class='bx bx-code-alt'></i>
+                </div>
+                <h3 class="category-title">Linguagens & Frameworks</h3>
+            </div>
+
+            <div class="skills-grid simple-list">
+                <span class="skill-badge">Java</span>
+                <span class="skill-badge">Kotlin</span>
+                <span class="skill-badge">Spring Boot</span>
+                <span class="skill-badge">JPA</span>
+                <span class="skill-badge">API Rest</span>
+                <span class="skill-badge">Hibernate</span>
+                <span class="skill-badge">Git</span>
+                <span class="skill-badge">GitHub</span>
+                <span class="skill-badge">HTML</span>
+                <span class="skill-badge">CSS</span>
+                <span class="skill-badge">JavaScript</span>
+            </div>
+        </div>
+
+        <div class="skills-category glass-card">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class='bx bx-wrench'></i>
+                </div>
+                <h3 class="category-title">Ferramentas & Produtividade</h3>
+            </div>
+
+            <div class="skills-grid simple-list">
+                <span class="skill-badge">SQL</span>
+                <span class="skill-badge">Toad for Oracle</span>
+                <span class="skill-badge">PostgreSQL</span>
+                <span class="skill-badge">DBeaver</span>
+                <span class="skill-badge">N8N</span>
+                <span class="skill-badge">Jira</span>
+                <span class="skill-badge">Miro</span>
+                <span class="skill-badge">Excel</span>
+                <span class="skill-badge">Word</span>
+                <span class="skill-badge">Sheets</span>
+                <span class="skill-badge">Docs</span>
+                <span class="skill-badge">Figma</span>
+                <span class="skill-badge">Canvas</span>
+            </div>
+        </div>
+
+        <div class="skills-category glass-card">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class='bx bx-cloud'></i>
+                </div>
+                <h3 class="category-title">Outros & Idiomas</h3>
+            </div>
+
+            <div class="skills-grid simple-list">
+                <span class="skill-badge">Insomnia</span>
+                <span class="skill-badge">Postman</span>
+                <span class="skill-badge">Jenkins</span>
+                <span class="skill-badge">Maven</span>
+                <span class="skill-badge">VScode</span>
+                <span class="skill-badge">Cursor</span>
+                <span class="skill-badge">Intellij</span>
+                <span class="skill-badge">Android Studio</span>
+                <span class="skill-badge">Claude API</span>
+                <span class="skill-badge">Gemini API</span>
+                <span class="skill-badge">Inglês (A2) - Proficiência profissional</span>
+                <span class="skill-badge">Português - Nativo</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+:root {
+    --primary-color: #fab570;
+    --bg-dark: #0a0a0a;
+    --bg-card: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --glass-bg: rgba(26, 26, 26, 0.7);
+    --glass-border: rgba(250, 181, 112, 0.1);
+}
+
+/* permite que a seção cresça conforme o conteúdo */
+.skills {
+    padding: 100px 9% 50px;
+    background: var(--bg-dark);
+    min-height: auto;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* mais fluido */
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: start;
+    grid-auto-rows: auto;
+}
+
+/* category card */
+.skills-category {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: stretch; /* expande com o container */
+    background: var(--glass-bg);
+    border-radius: 16px;
+    padding: 1.6rem;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.skills-category:hover {
+    transform: translateY(-6px);
+    border-color: rgba(250,181,112,0.16);
+    background: rgba(26,26,26,0.85);
+}
+
+.category-header { display:flex; align-items:center; gap:1rem; margin-bottom:1rem; }
+.category-icon { width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:rgba(250,181,112,0.08); border-radius:10px; color:var(--primary-color); font-size:1.2rem; }
+.category-title { font-size:1.1rem; color:var(--text-primary); font-weight:600; }
+
+/* simple list of badges instead of progress bars */
+.skills-grid.simple-list {
+    display:flex;
+    flex-wrap:wrap;
+    gap:.6rem;
+    align-items:flex-start;
+}
+
+.skill-badge {
+    display:flex;
+    padding:.45rem .75rem;
+    border-radius:12px;
+    background: rgba(250,181,112,0.06);
+    color: var(--text-primary);
+    font-weight:600;
+    font-size:0.92rem;
+    border:1px solid transparent;
+    transition: all .18s ease;
+}
+
+.skill-badge:hover {
+    transform: translateY(-4px);
+    border-color: rgba(250,181,112,0.12);
+    background: rgba(26,26,26,0.75);
+    color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skills { padding: 80px 5% 40px; }
+    .skills .heading { font-size:2rem; gap:.6rem; flex-direction:column; }
+    .skills-container { grid-template-columns: 1fr; gap:1.2rem; }
+    .skill-badge { font-size:0.9rem; padding:.4rem .6rem; }
+}
+
+@media (max-width: 480px) {
+    .skills .heading { font-size:1.8rem; }
+    .skill-badge { font-size:0.85rem; padding:.36rem .5rem; }
+}
+</style>
